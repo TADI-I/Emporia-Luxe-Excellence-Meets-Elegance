@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emporia Luxe | Excellence Meets Elegance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 60px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #222;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #b8860b;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* ===== MISSION & VISION ===== */
+        .mission-vision {
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .mv-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .mv-box {
+            flex: 1;
+            padding: 30px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            background-color: #f8f5f2;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            flex: 1 1 300px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header {
+            background-color: #b8860b;
+            color: white;
+            padding: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body ul {
+            list-style: none;
+        }
+
+        .card-body li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .card-body li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: #b8860b;
+            font-weight: bold;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-us {
+            background-color: #fff;
+        }
+
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit {
+            flex: 1 1 200px;
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8f5f2;
+            border-radius: 8px;
+        }
+
+        .benefit i {
+            font-size: 2.5rem;
+            color: #b8860b;
+            margin-bottom: 20px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background-color: #222;
+            color: white;
+        }
+
+        .contact h2, .contact h2::after {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-box {
+            flex: 1 1 300px;
+        }
+
+        .contact-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #b8860b;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #b8860b;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .mv-container {
+                flex-direction: column;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">EMPORIA LUXE</h1>
+            <p class="tagline">Excellence Meets Elegance</p>
+        </div>
+    </header>
+
+    <!-- Company Overview -->
+    <section id="overview" class="visible">
+        <div class="container">
+            <h2>Company Overview</h2>
+            <p>Emporia Luxe is a premier service provider dedicated to delivering excellence and elegance through a comprehensive suite of services tailored to meet the diverse needs of corporate, private, and public clients. We specialize in Event Management, Security Services, and Cleaning Solutions, combining innovation, reliability, and luxury to exceed expectations.</p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-container">
+                <div class="mv-box">
+                    <h2>Our Mission</h2>
+                    <p>To provide seamless, top-quality services that embody sophistication, efficiency, and excellence in every detail.</p>
+                </div>
+                <div class="mv-box">
+                    <h2>Our Vision</h2>
+                    <p>To be the leading name in luxury events, cleaning, and security solutions across Africa and beyond—where excellence meets elegance in everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Core Services</h2>
+            <div class="service-cards">
+                <!-- Event Management -->
+                <div class="card">
+                    <div class="card-header">Event Management</div>
+                    <div class="card-body">
+                        <p>We offer end-to-end solutions for events of all scales, ensuring memorable experiences that reflect style and precision.</p>
+                        <p><strong>Our Event Services Include:</strong></p>
+                        <ul>
+                            <li>Concept Development</li>
+                            <li>Budgeting</li>
+                            <li>Venue Selection</li>
+                            <li>Vendor Coordination</li>
+                            <li>Logistics</li>
+                            <li>Marketing & Promotion</li>
+                            <li>Staffing</li>
+                            <li>Contingency Planning</li>
+                            <li>Permitting & Licensing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Security Services -->
+                <div class="card">
+                    <div class="card-header">Security Services</div>
+                    <div class="card-body">
+                        <p>Emporia Luxe delivers professional security solutions tailored to various sectors, ensuring safety with discretion and professionalism.</p>
+                        <p><strong>Security Services Include:</strong></p>
+                        <ul>
+                            <li>Corporate & Commercial Guarding</li>
+                            <li>Industrial Guarding</li>
+                            <li>Domestic & Community Guarding</li>
+                            <li>Access Control</li>
+                            <li>Special Event Security</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cleaning Services -->
+                <div class="card">
+                    <div class="card-header">Cleaning Services</div>
+                    <div class="card-body">
+                        <p>Our cleaning division provides meticulous and reliable services for residential, commercial, and healthcare environments.</p>
+                        <p><strong>Cleaning Services Include:</strong></p>
+                        <ul>
+                            <li>Maintenance Cleaning</li>
+                            <li>Pest Control</li>
+                            <li>Garden & Landscaping</li>
+                            <li>Health & Safety Compliance</li>
+                            <li>Medical Supplies</li>
+                            <li>Medical Disposables</li>
+                            <li>Medical Laundry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <h2>Why Choose Emporia Luxe?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Professionalism</h3>
+                    <p>Our trained staff offer courteous and reliable service.</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored packages to meet your specific needs.</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality Assurance</h3>
+                    <p>Commitment to high standards and attention to detail.</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Trusted Network</h3>
+                    <p>Strong relationships with vetted suppliers and vendors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-box">
+                    <h3>Call Us</h3>
+                    <p>+27 67 698 4211</p>
+                    <p>+27 78 495 0764 / 071 812 2716</p>
+                </div>
+                <div class="contact-box">
+                    <h3>Email & Website</h3>
+                    <p>Email: <a href="mailto:bafedile@emporialuxe.co.za" style="color: #b8860b;">bafedile@emporialuxe.co.za</a></p>
+                    <p>Website: <a href="http://www.emporialuxe.co.za" style="color: #b8860b;">www.emporialuxe.co.za</a></p>
+                </div>
+                <div class="contact-box">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Emporia Luxe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
