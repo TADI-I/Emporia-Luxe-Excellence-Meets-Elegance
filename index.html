@@ -188,7 +188,63 @@
             color: #b8860b;
             margin-bottom: 20px;
         }
+ /* ===== DIRECTORS ===== */
+        .directors {
+            background-color: #f8f5f2;
+            padding: 80px 0;
+        }
 
+        .directors-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .director-card {
+            flex: 1 1 500px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            max-width: 600px;
+        }
+
+        .director-image {
+            flex: 0 0 200px;
+            background: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .director-bio {
+            padding: 30px;
+            flex: 1;
+        }
+
+        .director-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .director-title {
+            font-weight: 600;
+            color: #b8860b;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .director-card {
+                flex-direction: column;
+            }
+            .director-image {
+                flex: 0 0 300px;
+            }
+        }
         /* ===== CONTACT ===== */
         .contact {
             background-color: #222;
@@ -351,6 +407,40 @@
                             <li>Medical Disposables</li>
                             <li>Medical Laundry</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="directors">
+        <div class="container">
+            <h2>Our Directors</h2>
+            <div class="directors-container">
+                <!-- Director 1 -->
+                <div class="director-card">
+                    <div class="director-image" style="background-image: url('director_1.jpeg')">
+                        <!-- Replace with actual image -->
+                    </div>
+                    <div class="director-bio">
+                        <h3 class="director-name">Brenda Dikeledi Berhanu</h3>
+                        <span class="director-title">Entrepreneur | Event Host | Businesswoman</span>
+                        <p>I am a dynamic and passionate businesswoman with a diverse background spanning over a decade. As a young entrepreneur, I have successfully hosted multiple high-profile events within the entertainment industry and previously ran a modeling agency for five years. My experience also includes promotional campaigns and photo shoots, reflecting my strong creative and organizational skills.</p>
+                        <p>I hold a Diploma in Executive Secretariat and have served as a Computer Officer in the Office of the Speaker for the past 10 years, where I've honed my technical and administrative expertise.</p>
+                        <p>In addition to my professional role, I run my own business providing security and cleaning services, with a growing interest in expanding across various business sectors. I am currently pursuing a Bachelor's Degree in Public Management, with a strong commitment to personal growth and innovation in business.</p>
+                        <p>I'm passionate about entrepreneurship, always open to new opportunities, and driven by the vision to grow, lead, and make a meaningful impact in every venture I pursue.</p>
+                    </div>
+                </div>
+
+                <!-- Director 2 -->
+                <div class="director-card">
+                    <div class="director-image" style="background-image: url('director_2.jpeg')">
+                        <!-- Replace with actual image -->
+                    </div>
+                    <div class="director-bio">
+                        <h3 class="director-name">[Second Director's Name]</h3>
+                        <span class="director-title">[Director's Title]</span>
+                        <p>[Second director's bio text would go here following the same format as above]</p>
                     </div>
                 </div>
             </div>
