@@ -201,21 +201,23 @@
             justify-content: center;
         }
 
-        .director-card {
-            flex: 1;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            display: flex;
-            max-width: 600px;
+        director-card {
+    display: flex;
+    flex-direction: column; /* 🔧 Force vertical stacking */
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    max-width: 600px;
+    width: 100%;
         }
 
         .director-image {
-            flex: 0 0 200px;
-            background: #ddd;
-            background-size: cover;
-            background-position: center;
+    width: 100%; /* 🔧 Full width */
+    height: 300px; /* 🔧 Fixed height for visual consistency */
+    background: #ddd;
+    background-size: cover;
+    background-position: center;
         }
 
         .director-bio {
@@ -276,13 +278,13 @@
 }
 
         @media (max-width: 768px) {
-            .director-card {
+           /* .director-card {
                 flex-direction: column;
             }
             .director-image {
                 flex: 0 0 300px;
             }
-        }
+        } */
         /* ===== CONTACT ===== */
         .contact {
             background-color: #222;
