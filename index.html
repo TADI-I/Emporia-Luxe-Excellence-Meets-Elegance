@@ -257,12 +257,21 @@
         }
 
         @media (max-width: 768px) {
-            .director-card {
-                width:100%;
-            }
-            .director-image {
-                flex: 0 0 300px;
-            }
+              .directors-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px; /* Reduce gap for small screens */
+        padding: 0 20px; /* Add horizontal padding */
+    }
+
+    .director-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .director-image {
+        width: 100%;
+        height: 250px; /* Slightly smaller for mobile */
+    }
         } 
         /* ===== CONTACT ===== */
         .contact {
